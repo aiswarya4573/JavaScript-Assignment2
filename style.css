@@ -99,12 +99,17 @@
 }
 #top-nav{
     background: #1B6392;
-    padding: 12px 300px;
+    padding: 12px ;
     display: flex;
     justify-content:center;
     align-items: center;
-    gap: 9rem;
+    
+    
 
+}
+.welcome{
+    transform: translateX(-90px);
+    padding-right: 23px;
 }
 .social-nav{
     
@@ -120,5 +125,388 @@
     justify-content:center;
     align-items: center;
     gap: 2rem;
+    transform: translateX(40px);
 
 }
+.logo{
+    
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+   
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    
+
+
+}
+.search-bar form{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+    
+    
+
+
+}
+.search-bar input{
+   border: none;
+   padding: 14px 20px;
+   width: 646px;
+  
+   
+    
+    
+
+
+}
+.search-icon button{
+    background-color: white;
+    border: none;
+    margin-right: 10px;
+}
+.search-bar{
+    background-color: white;
+    border-radius: 2px;
+    
+    
+}
+#middle-nav{
+    background: #1B6392;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 20px;
+    gap: 2rem;
+    
+    
+
+}
+.nav-class {
+    color: white;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: #F2F4F5;
+    
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover {
+    background-color: #2980B9;
+  }
+  
+  #bottom-nav{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: black;
+    border-bottom: 1px solid #E4E7E9;
+  
+  }
+  .track-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+   
+
+  }
+  .compare{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+   
+
+  }
+  .customer-support{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+   
+
+  }
+  .need-help{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+
+  }
+  .best-deals-class{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 100px;
+    gap: 1rem;
+  }
+  .Deals-time{
+    background: #F3DE6D;
+    padding: 6px 12px ;
+    border-radius: 2px ;
+    opacity: 0px;
+
+
+    
+  }
+  .deals-ends{
+   
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+
+
+
+  }
+  .best-deals{
+    
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: left;
+
+  }
+  .off{
+    background: #EFD33D;
+    width: 73px;
+    height: 26px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 28px;
+    
+
+
+  }
+  .hot{
+    background: #EE5858;
+    width: 46px;
+    height: 26px;
+
+    
+    border-radius: 2px;
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 25px;
+    
+
+    
+
+  }
+  .rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 90px;
+  }
+  .rating p{
+    color: #77878F;
+
+  }
+  .first-card-content{
+    width:280px;
+    height:182px;
+    margin-left: 20px;
+    
+    
+    
+
+
+  }
+  .heading {
+    text-align: justify;
+    width: 280px;
+    height: 48px;
+    
+
+  }
+  .price-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2rem;
+
+  }
+  .details{
+    color:  #5F6C72;
+
+  }
+  .button-container button{
+    padding: 0px 24px;
+    background: #FA8232;
+    width:173px;
+    height:48px;
+    border-radius: 2px;
+    transform: translateY(-15px);
+    border: none;
+    color: white;
+    text-align: center;
+   
+
+
+
+  }
+  .first-card{
+    border: 1px solid #E4E7E9;
+    width: 328px;
+    height: 592px;
+   
+
+  }
+  .sold{
+    background: #929FA5;
+    color: white;
+    width: 80px;
+    height:26px;
+    top: 12px;
+    left: 12px;
+    padding: 5px 10px;
+    border-radius: 2px;
+   
+
+  }
+  .one{
+    text-align: justify;
+    width: 248px;
+    height: 296px;
+    border: 1px ;
+    border: 1px solid #E4E7E9;
+
+  }
+  .content{
+    width: 216px;
+    height: 68px;
+    margin-left: 10px;
+    
+
+  }
+  .sold{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .badge{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .browse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-right: 55px;
+  }
+  .outer-content-class{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .first-row-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Shop p{
+    margin-top: 60px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+
+
+  }
+  .two{
+    width:205px;
+    height: 236px;
+    padding: 24px 12px ;
+    gap: 16px;
+    border-radius: 4px;
+    border: 1px ;
+    border: 1px solid #E4E7E9 ;
+    
+
+  }
+  .second-row-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .two p{
+    text-align: center;
+  }
+  .first-column p{
+    
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    width: 312px;
+    height: 384px;
+    
+
+
+
+  }
+  .third-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 50px;
+  }
+  .coulumn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 312px;
+    height: 104px;
+    border: 1px solid #E4E7E9 ;
+  }
+  .first-column{
+    width: 312px;
+    height:384px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+
+
+  }
+  .card-content{
+    width: 196px;
+    height: 68px;
+  }
