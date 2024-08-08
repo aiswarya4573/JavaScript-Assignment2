@@ -9,7 +9,7 @@
    
     height: 80px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 9rem;
     
@@ -57,6 +57,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    margin-left: 70px;
 }
 .black p{
  
@@ -94,7 +95,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 9rem;
+    gap: 6rem;
+    margin-left: 170px;
     
 }
 #top-nav{
@@ -180,7 +182,7 @@
 #middle-nav{
     background: #1B6392;
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     padding: 20px;
     gap: 2rem;
@@ -462,6 +464,21 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    overflow-x: scroll;
+  }
+  .second-row-container::-webkit-scrollbar{
+    display: none;
+  }
+  .second-row-container-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10% auto;
+  }
+  .back-btn .forward-btn{
+    cursor: pointer;
+    margin: 40px;
+
   }
   .two p{
     text-align: center;
@@ -510,3 +527,108 @@
     width: 196px;
     height: 68px;
   }
+  footer{
+    background-color:#191C1F;
+    padding: 72px 300px;
+    margin-top: 40px;
+
+  }
+  .main-foot{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6rem;
+    background-color:#191C1F;
+    color: white;
+    
+
+    
+
+  }
+  .Accesories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .browse-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Clicon-logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+  }
+  .Clicon-logo div{
+    
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    text-align: left;
+
+  }
+  #ecommerce{
+    width: 312px;
+    height: 216px;
+   
+
+  }
+  .light{
+   
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color:#77878F;
+    
+
+
+  }
+  .dark{
+   
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+
+
+  }
+  .foot-col div{
+    width: 200px;
+  }
+  #quick-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .download-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color:#303639;
+    text-align: center;
+    padding: 16px 20px;
+    
+
+  }
+  #download-app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+
+  }
+  .popular-row button{
+    background-color:#303639;
+    color: white;
+    padding: 6px 12px;
+  }
+  
