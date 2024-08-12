@@ -27,7 +27,7 @@
                             <div class="shoping-cart">
                             <img src="Vector copy.png"/>
 
-                            <div class="cart-no">0</div>
+                            <div class="cart-no" id="cartCount">0</div>
 
                             </div>
                             <img src="Heart.png"/>
@@ -91,33 +91,37 @@
                         <p class="box-titles">SUB TOTAL</p>
 
                     </div>
-                    <div class="item-details">
-                        <div class="item-outer">
-                            <div class="close-button">
-                                <img src="XCircle.png"/>
+                    <div class="item-box-outer" id="myList">
+                        <div class="item-details">
+                            <div class="item-outer">
+                                <div class="close-button-item">
+                                    <img src="XCircle.png"/>
+                                </div>
+                                <div class="item-box">
+                                    
+                                   <img src="#" class="item-img" id="product-img"/>
+                                    <p class="item-name" id="itm-name"></p>
+                                </div>
+    
                             </div>
-                            <div class="item-box">
-                                
-                               <img src="#" class="item-img"/>
-                                <p class="item-name"></p>
+                           
+                            <p class="price-no" id="item-price"></p>
+                            <div class="item-quantity">
+                                <button class="minus" type="submit">-</button>
+                                <p class="quantity-no" id="quantity-number">0</p>
+                                <button class="plus" type="submit">+</button>
                             </div>
-
-                        </div>
-                       
-                        <p class="price-no"></p>
-                        <div class="item-quantity">
-                            <button class="minus" type="submit">-</button>
-                            <p class="quantity-no">0</p>
-                            <button class="plus" type="submit">+</button>
-                        </div>
-                        <p class="price-no"></p>
-                        
-
-
-
+                            <p class="price-no" id="subtotal"></p>
                             
+    
+    
+    
+                                
+    
+                        </div>
 
                     </div>
+                   
                     
 
 
@@ -126,7 +130,7 @@
                     <p class="card-totals">Card Totals</p>
                     <div class="subtotal">
                         <p>Sub-total</p>
-                        <p class="subtotal-price"></p>
+                        <p>&dollar;<span class="subtotal-price" id="subtotal-number"></span></p>
                     </div>
                     <div class="shipping">
                         <p>Shipping</p>
@@ -136,17 +140,18 @@
                     <div class="discount">
                         <p>Discount</p>
                         <div class="price-container">
-                            <p>$</p>
-                            <p class="discount-price">24</p>
+                            
+                            <p class="discount-price">&dollar;<span id="discount-no">24</span></p>
                         </div>
 
                     </div>
                     <div class="tax">
                         <p>Tax</p>
                         <div class="tax-container">
-                            <p>$</p>
+                            
                             <p class="tax-amount">
-                                61.99
+                                &dollar;
+                                <span id="tax-no">61.99</span>
 
                             </p>
                         </div>
@@ -156,7 +161,7 @@
                         <p>Total</p>
                         <div class="total-amount-box">
                             <p>$</p>
-                            <p class="total-amount"></p>
+                            <p class="total-amount" id="total-no"></p>
                             <p>USD</p>
                         
 
@@ -293,6 +298,126 @@
             </div>
 
         </footer>
+
+       
+            <script>
+               const plus =document.querySelector(".plus");
+                const minus = document.querySelector(".minus");
+                let cart;
+                let priceno;
+                let quantno;
+                let subtotalno;
+                let amount;
+                let tax= document.getElementById('tax-no').textContent;
+            let discount= document.getElementById('discount-no').textContent;
+                
+            const imgUrl = sessionStorage.getItem('imageUrl');
+            if (imgUrl) {
+                document.getElementById('product-img').src = imgUrl;
+            }
+            const modalName = sessionStorage.getItem('name');
+            if (modalName) {
+                document.getElementById('itm-name').textContent = modalName;
+            }
+            
+            const modalPrice = sessionStorage.getItem('price');
+            if (modalPrice) {
+                document.getElementById('item-price').textContent = modalPrice;
+                priceno = modalPrice;
+            }
+            const quantity = sessionStorage.getItem('count');
+            if (quantity) {
+                document.getElementById('quantity-number').textContent = quantity;
+                quantno = quantity;
+                
+                
+                
+                
+                //document.getElementById('subtotal').textContent = parseInt(priceno*quantno);
+               
+
+
+                
+            }
+            let quantityNo = parseInt(quantity);
+            let priceNumber=parseInt(priceno);
+            subtotalno =(priceNumber*quantityNo);
+            console.log(subtotalno);
+            
+                
+            amount=(parseInt(subtotalno)+ parseFloat(tax)+parseFloat(discount));
+                
+            
+            
+            document.getElementById('subtotal').textContent= subtotalno;
+
+            document.getElementById('subtotal-number').textContent= subtotalno;
+
+            //document.getElementById('subtotal-number').textContent= (priceno*quantno);
+            document.getElementById('total-no').textContent= amount;
+            cart= cart+quantity;
+            document.getElementById('cartCount').textContent=quantity;
+
+                function addQuantity() {
+                quantityNo += 1;
+                document.getElementById('quantity-number').textContent=quantityNo;
+                subtotalno =(priceNumber*quantityNo);
+                document.getElementById('subtotal').textContent=subtotalno;
+                document.getElementById('subtotal-number').textContent=subtotalno;
+                amount=(parseInt(subtotalno)+ parseFloat(tax)+parseFloat(discount));
+                document.getElementById('total-no').textContent= amount;
+
+
+
+
+
+                
+            }
+
+            function removeQuantity() {
+                if (quantityNo > 0) {
+                    quantityNo -= 1;
+                    document.getElementById('quantity-number').textContent=quantityNo;
+                    subtotalno =(priceNumber*quantityNo);
+                    document.getElementById('subtotal').textContent=subtotalno;
+                    document.getElementById('subtotal-number').textContent=subtotalno;
+                    amount=(parseInt(subtotalno)+ parseFloat(tax)+parseFloat(discount));
+                    document.getElementById('total-no').textContent= amount;
+
+
+
+                    
+                }
+            }
+            plus.addEventListener("click", addQuantity);
+
+            minus.addEventListener("click", removeQuantity);
+            const toDoItem=document.querySelector(".item-details");
+       
+            const toDoList=document.querySelector(".item-box-outer");
+
+            window.addEventListener("load", () => {
+                console.log("houi")
+            console.log(toDoItem);
+            const newtoDoItem = toDoItem.cloneNode(true);
+            console.log(newtoDoItem);
+    
+            console.log(modalName.textContent);
+             newtoDoItem.querySelector('.item-name').textContent = modalName;
+             newtoDoItem.querySelector('.item-img').textContent = imgUrl;
+             newtoDoItem.querySelector('.price-no').textContent = modalPrice;
+
+            
+             toDoList.append(newtoDoItem);
+        
+            })
+           
+
+           
+
+            
+            </script>
+       
 
 
 

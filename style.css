@@ -789,7 +789,7 @@ h1 {
   border: 1px solid #E4E7E9;
   margin-top: 50px;
   width: 772px;
-  height: 306px;
+  height: auto;
   margin-left: 60px;
 }
 .outer-box{
@@ -899,8 +899,12 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 .card-totals{
   margin-left: 10px;
   margin-top: 30px;
+}
+#itm-name{
+  width: 60px;
 }
