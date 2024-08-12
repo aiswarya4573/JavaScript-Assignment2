@@ -101,7 +101,7 @@ addToCard.addEventListener("click", () => {
 */
 
 
-item.forEach((items) => {
+/*item.forEach((items) => {
     items.addEventListener("click", () => {
         openModal();
         modalImage.src = items.querySelector(".image").src;
@@ -110,7 +110,7 @@ item.forEach((items) => {
        
 
     });
-});
+});*/
 
 
 

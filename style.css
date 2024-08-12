@@ -908,3 +908,75 @@ h1 {
 #itm-name{
   width: 60px;
 }
+
+
+#myList {
+  display: flex;
+  flex-direction: column; 
+  gap: 16px; 
+}
+
+.itemDetails {
+  display: flex;
+  align-items: center; 
+  gap: 16px; 
+  border: 1px solid #E4E7E9; 
+  padding: 16px; 
+  
+  background-color: white ;
+}
+
+.item-img-container {
+  flex: 0 0 auto; 
+}
+
+.item-img {
+  max-width: 100px; 
+  height: auto; 
+  border-radius: 4px; 
+}
+
+.item-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; 
+}
+
+.item-info p {
+  margin: 4px 0; 
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center; 
+  gap: 8px; 
+  border: 1px solid black; 
+  padding: 4px 8px; 
+ 
+  background-color: #fff; 
+}
+
+.quantity-button {
+   background-color: white;
+  border: none; 
+  color: black; 
+  padding: 6px 12px; 
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.quantity-button:hover {
+  background-color: #0056b3; 
+}
+
+.quantity {
+  font-weight: bold; 
+}
+.home{
+  color: #77878F;
+  text-decoration: none;
+}
+
+
