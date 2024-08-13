@@ -284,6 +284,7 @@
             <script>
                
             document.addEventListener('DOMContentLoaded', () => {
+               
                 const tax = parseFloat(document.getElementById('tax-no').textContent) || 0;
                 const discount = parseFloat(document.getElementById('discount-no').textContent) || 0;
                 const checkoutItems = document.getElementById('myList');
@@ -299,6 +300,7 @@
                         const priceNumber = parseFloat(item.price.replace('$', '')) || 0;
                         const quantityNo = parseInt(item.quantity) || 0;
                         const subtotalNo = priceNumber * quantityNo;
+                       
                         
 
 
@@ -322,7 +324,25 @@
                                 <p>$<span class="subtotal">${subtotalNo.toFixed(2)}</span></p>
                             </div>
                         `;
+                        
+                      
 
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
                         
                         checkoutItems.appendChild(itemDiv);
                     });
@@ -351,6 +371,7 @@
 
                         if (e.target.classList.contains('plus')) {
                             item.quantity = (parseInt(item.quantity) || 0) + 1;
+                            console.log(item.quantity);
                         } else if (e.target.classList.contains('minus') && item.quantity > 1) {
                             item.quantity = (parseInt(item.quantity) || 0) - 1;
                         }
@@ -359,10 +380,12 @@
                         updateCheckout();
                     }
                 });
+              
 
+                
                 function updateCheckout() {
                     const cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
-                    checkoutItemsContainer.innerHTML = '';
+                    checkoutItems.innerHTML = '';
 
                     cartItems.forEach((item, index) => {
                         const priceNumber = parseFloat(item.price.replace('$', '')) || 0;
@@ -389,7 +412,7 @@
                             </div>
                         `;
 
-                        checkoutItemsContainer.appendChild(itemDiv);
+                        checkoutItems.appendChild(itemDiv);
                     });
 
                     const subtotalSum = cartItems.reduce((total, item) => {
@@ -403,6 +426,7 @@
                     document.getElementById('subtotal-number').textContent = subtotalSum.toFixed(2);
                     document.getElementById('total-no').textContent = amount.toFixed(2);
                 }
+               
             });
 
 
