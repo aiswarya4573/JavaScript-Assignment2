@@ -87,10 +87,10 @@
 
   
 }
-.close-btn{
+/*.close-btn{
     background-color: #303639;
     
-}
+}*/
 .widget-inner-box{
     display: flex;
     justify-content: center;
@@ -533,6 +533,7 @@
 
 
   }
+  
   .card-content{
     width: 196px;
     height: 68px;
@@ -709,9 +710,10 @@
 }
 
 .close-modal-btn{
-  background-color: #191c1fdd;
+  /*background-color: #191c1fdd;*/
   border-radius: 99%;
   border: none;
+  background-color: #191C1F;
 }
 
 .hide {
@@ -940,7 +942,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem; 
+  gap: 2rem; 
 }
 
 .item-info p {
