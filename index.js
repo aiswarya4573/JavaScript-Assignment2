@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var targetDiv = document.querySelector('.video-placeholder-youtube');
       var text = document.querySelector('.video-placeholder-text-youtube');
       console.log("hi");
+      text.style.display = 'none';
       
       text.textContent="Youtube (owned by google) requires cookies to be enabled. Please open cookie preferences and enable functional cookies to view the video";
 
