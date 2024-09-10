@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("hi");
       texte.style.display = 'none';
       
-      text.textContent="Youtube (owned by google) requires cookies to be enabled. Please open cookie preferences and enable functional cookies to view the video";
+      texte.textContent="Youtube (owned by google) requires cookies to be enabled. Please open cookie preferences and enable functional cookies to view the video";
 
       
       // Ensure the div exists
