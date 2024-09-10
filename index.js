@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
       button.style.fontSize = '16px';
       button.style.cursor = 'pointer';
       button.style.borderRadius = '5px';
-      button.style.marginTop = '30px';
-      button.style.marginLeft = '60px';
+      button.style.marginTop = '190px';
+      button.style.marginRight = '200px';
       button.style.display = 'block'; // Ensure it is block-level to appear on its own line
       
       // Event listener to handle button click
