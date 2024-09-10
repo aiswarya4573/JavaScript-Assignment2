@@ -33,7 +33,7 @@ function clearOutputCookies() {
 document.addEventListener('DOMContentLoaded', function() {
   // Function to check if cookies are accepted
   function cookiesAccepted() {
-      // Adjust this based on your CookieYes implementation
+      // Modify this based on your CookieYes configuration or your cookie consent check logic
       return document.cookie.includes('cookieConsent=true');
   }
 
@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 
-  // Function to navigate to the cookie preferences
+  // Function to navigate to cookie preferences
   function goToCookiePreferences() {
-      // Adjust this based on your CookieYes setup or preferences URL
+      // Adjust this based on the actual API provided by CookieYes
       if (window.CookieYes && typeof CookieYes.openCookieSettings === 'function') {
           CookieYes.openCookieSettings();
       } else {
-          alert('Cookie preferences not available. Please check your cookie consent settings.');
+          alert('Cookie preferences not available. Please check your CookieYes setup.');
       }
   }
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
       button.addEventListener('click', goToCookiePreferences);
   }
 
-  // Run the function after CookieYes has loaded and consent has been checked
+  // Run the function after CookieYes has loaded
   window.onload = function() {
       toggleOverlay();
   };
