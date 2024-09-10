@@ -30,7 +30,7 @@ function clearOutputCookies() {
   const output = document.getElementById("cookies");
   output.textContent = "";
 }
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
   // Function to create and add the button to the div
   function addCookiePreferencesButton() {
       // Get the target div by its ID
@@ -72,7 +72,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Call the function to add the button
   addCookiePreferencesButton();
+});*/
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to create and add the button to a specific div
+  function addCookiePreferencesButton() {
+      // Get the target div by its class name (or use an ID if preferred)
+      var targetDiv = document.querySelector('.video-placeholder-youtube');
+      
+      // Ensure the div exists
+      if (!targetDiv) {
+          console.error('Target div with class "video-placeholder-youtube" not found.');
+          return;
+      }
+
+      // Create the button element
+      var button = document.createElement('button');
+      button.id = 'cookie-preferences-button'; // Optional: Can be used to reference the button later
+      button.textContent = 'Go to Cookie Preferences';
+      button.style.backgroundColor = '#007bff'; // Blue background
+      button.style.color = 'white';
+      button.style.border = 'none';
+      button.style.padding = '10px 20px';
+      button.style.fontSize = '16px';
+      button.style.cursor = 'pointer';
+      button.style.borderRadius = '5px';
+      button.style.marginTop = '10px';
+      button.style.display = 'block'; // Ensure it is block-level to appear on its own line
+      
+      // Event listener to handle button click
+      button.addEventListener('click', function() {
+          // Check if CookieYes API is available
+          if (window.CookieYes && typeof window.CookieYes.openCookieSettings === 'function') {
+              window.CookieYes.openCookieSettings();
+          } else {
+              alert('Cookie preferences not available. Please check your CookieYes setup.');
+          }
+      });
+
+      // Append the button to the target div
+      targetDiv.appendChild(button);
+  }
+
+  // Call the function to add the button
+  addCookiePreferencesButton();
 });
+
 
 
 
