@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function addCookiePreferencesButton() {
       // Get the target div by its class name (or use an ID if preferred)
       var targetDiv = document.querySelector('.video-placeholder-youtube');
-      var text = document.querySelector('.video-placeholder-text-youtube');
+      var texte = document.querySelector('.video-placeholder-text-youtube');
       console.log("hi");
-      text.style.display = 'none';
+      texte.style.display = 'none';
       
       text.textContent="Youtube (owned by google) requires cookies to be enabled. Please open cookie preferences and enable functional cookies to view the video";
 
