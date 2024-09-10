@@ -104,7 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
       button.addEventListener('click', function() {
           // Check if CookieYes API is available
           if (window.CookieYes && typeof window.CookieYes.openCookieSettings === 'function') {
-              window.CookieYes.openCookieSettings();
+              //window.CookieYes.openCookieSettings();
+              revisitCkyConsent();
           } else {
               alert('Cookie preferences not available. Please check your CookieYes setup.');
           }
