@@ -99,17 +99,31 @@ document.addEventListener('DOMContentLoaded', function() {
       button.style.marginTop = '190px';
       button.style.marginRight = '200px';
       button.style.display = 'block'; // Ensure it is block-level to appear on its own line
-      
+
+
+
+
+
+
+      document.addEventListener('cookieyes_banner_load', () => {
+                  
+                  if (button) {
+                  button.addEventListener('click', (event) => {
+                  revisitCkyConsent();
+                });
+              }
+            });
+            
       // Event listener to handle button click
-      button.addEventListener('click', function() {
+      /*button.addEventListener('click', function() {
           // Check if CookieYes API is available
           if (window.CookieYes && typeof window.CookieYes.openCookieSettings === 'function') {
-              //window.CookieYes.openCookieSettings();
-              revisitCkyConsent();
+              window.CookieYes.openCookieSettings();
+              
           } else {
               alert('Cookie preferences not available. Please check your CookieYes setup.');
           }
-      });
+      });*/
 
       // Append the button to the target div
       targetDiv.appendChild(button);
