@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to create and add the button to the div
   function addCookiePreferencesButton() {
       // Get the target div by its ID
-      var targetDiv = document.getElementById('vYhlbGus');
+      var targetDiv = document.getElementsByClassName('video-placeholder-youtube');
       
       // Ensure the div exists
       if (!targetDiv) {
-          console.error('Target div with ID "vYhlbGus" not found.');
+          console.error('Target div with class "video-placeholder-youtube" not found.');
           return;
       }
 
