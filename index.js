@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function addCookiePreferencesButton() {
       // Get the target div by its class name (or use an ID if preferred)
       var targetDiv = document.querySelector('.video-placeholder-youtube');
+      var text = document.querySelector('.video-placeholder-text-youtube');
+      text.textContent=""
       
       // Ensure the div exists
       if (!targetDiv) {
@@ -88,13 +90,14 @@ document.addEventListener('DOMContentLoaded', function() {
       // Create the button element
       var button = document.createElement('button');
       button.id = 'cookie-preferences-button'; // Optional: Can be used to reference the button later
-      button.textContent = 'Go to Cookie Preferences';
-      button.style.backgroundColor = '#007bff'; // Blue background
+      button.textContent = 'Open Cookie Preferences';
+      button.style.backgroundColor = '#000'; // Blue background
       button.style.color = 'white';
       button.style.border = 'none';
       button.style.padding = '10px 20px';
       button.style.fontSize = '16px';
       button.style.cursor = 'pointer';
+      button.style.width = '200px';
       button.style.borderRadius = '5px';
       button.style.marginTop = '190px';
       button.style.marginRight = '200px';
@@ -114,16 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
               }
             });
             
-      // Event listener to handle button click
-      /*button.addEventListener('click', function() {
-          // Check if CookieYes API is available
-          if (window.CookieYes && typeof window.CookieYes.openCookieSettings === 'function') {
-              window.CookieYes.openCookieSettings();
-              
-          } else {
-              alert('Cookie preferences not available. Please check your CookieYes setup.');
-          }
-      });*/
+      
 
       // Append the button to the target div
       targetDiv.appendChild(button);
