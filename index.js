@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Get the target div by its class name (or use an ID if preferred)
       var targetDiv = document.querySelector('.video-placeholder-youtube');
       var text = document.querySelector('.video-placeholder-text-youtube');
-      text.textContent="Youtube (owned by google) requires cookies to be enabled. Please open cookie preferences and enable functional cookies to view the video";
+      text.innerHTML="Youtube (owned by google) requires cookies to be enabled. Please open cookie preferences and enable functional cookies to view the video";
       
       // Ensure the div exists
       if (!targetDiv) {
