@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var paragraph = document.createElement('p');
   paragraph.style.fontSize = '16px';
   paragraph.style.marginBottom = '20px';
-  paragraph.innerHTML = 'YouTube (owned by Google) requires cookies to be enabled. Please open <a href="#" id="cookie-link" style="color: #00aaff; text-decoration: underline;">Cookie Preferences</a> and enable Functional cookies to view the video.';
+  paragraph.innerHTML = 'YouTube (owned by Google) requires cookies to be enabled. Please open <a href="#" id="cookie-link" style="color: #ffff; text-decoration: underline;">Cookie Preferences</a> and enable Functional cookies to view the video.';
   overlayDiv.appendChild(paragraph);
 
   // Create and append the button
