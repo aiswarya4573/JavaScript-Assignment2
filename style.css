@@ -984,6 +984,6 @@ h1 {
   text-decoration: none;
 }
 .video-placeholder-text-youtube{
-  display: none;
+  display: none !important;
 }
 
