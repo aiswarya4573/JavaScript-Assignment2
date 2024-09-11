@@ -95,16 +95,23 @@ document.addEventListener('DOMContentLoaded', function() {
   function addCookiePreferencesButton() {
       // Get the target div by its class name (or use an ID if preferred)
       var targetDiv = document.querySelector('.video-placeholder-youtube');
+      var texteDiv = document.querySelector('.video-placeholder-text-youtube');
+      console.log(texteDiv);
+
       
       // Ensure the target div exists
       if (!targetDiv) {
           console.error('Target div with class "video-placeholder-youtube" not found.');
           return;
       }
+      // Ensure the target div exists
+      if (!texteDiv) {
+        console.error('Target div with class "video-placeholder-text-youtube" not found.');
+        return;
+    }
 
       // Create a new div element to hold the text
-      var texteDiv = document.createElement('div');
-      texteDiv.className = 'video-placeholder-text-youtube';
+      
       texteDiv.style.display = 'none'; // Initially hidden
 
       // Set the text content inside the newly created div
@@ -114,31 +121,31 @@ document.addEventListener('DOMContentLoaded', function() {
       targetDiv.appendChild(texteDiv);
 
       // Create the button element
-      var button = document.createElement('button');
-      button.id = 'cookie-preferences-button'; // Optional: Can be used to reference the button later
-      button.textContent = 'Open Cookie Preferences';
-      button.style.backgroundColor = '#000'; // Black background
-      button.style.color = 'white';
-      button.style.border = 'none';
-      button.style.padding = '10px 20px';
-      button.style.fontSize = '16px';
-      button.style.cursor = 'pointer';
-      button.style.width = '600px';
-      button.style.borderRadius = '5px';
-      button.style.marginTop = '190px';
-      button.style.marginRight = '200px';
-      button.style.display = 'block'; // Ensure it is block-level to appear on its own line
+      var openbutton = document.createElement('button');
+      openbutton.id = 'cookie-preferences-button'; // Optional: Can be used to reference the button later
+      openbutton.textContent = 'Open Cookie Preferences';
+      openbutton.style.backgroundColor = '#000'; // Black background
+      openbutton.style.color = 'white';
+      openbutton.style.border = 'none';
+      openbutton.style.padding = '10px 20px';
+      openbutton.style.fontSize = '16px';
+      openbutton.style.cursor = 'pointer';
+      openbutton.style.width = '600px';
+      openbutton.style.borderRadius = '5px';
+      openbutton.style.marginTop = '190px';
+      openbutton.style.marginRight = '200px';
+      openbutton.style.display = 'block'; // Ensure it is block-level to appear on its own line
 
       document.addEventListener('cookieyes_banner_load', () => {
-          if (button) {
-              button.addEventListener('click', (event) => {
+          if (openbutton) {
+              openbutton.addEventListener('click', (event) => {
                   revisitCkyConsent();
               });
           }
       });
 
       // Append the button to the target div
-      targetDiv.appendChild(button);
+      targetDiv.appendChild(openbutton);
   }
 
   // Call the function to add the button and texte div
