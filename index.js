@@ -136,13 +136,12 @@ document.addEventListener('DOMContentLoaded', function() {
       openbutton.style.marginRight = '200px';
       openbutton.style.display = 'block'; // Ensure it is block-level to appear on its own line
 
-      document.addEventListener('cookieyes_banner_load', () => {
-          if (openbutton) {
+     
               openbutton.addEventListener('click', (event) => {
                   revisitCkyConsent();
               });
-          }
-      });
+          
+   
 
       // Append the button to the target div
       targetDiv.appendChild(openbutton);
