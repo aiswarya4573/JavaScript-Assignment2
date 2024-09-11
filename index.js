@@ -242,6 +242,9 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   // Get the YouTube placeholder div by its class name
   var videoPlaceholder = document.querySelector('.video-placeholder-youtube');
+  var oldContent = document.querySelector('.video-placeholder-text-youtube');
+  oldContent.style.display='none';
+
   
   // Ensure the video placeholder exists
   if (!videoPlaceholder) {

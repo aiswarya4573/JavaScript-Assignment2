@@ -983,5 +983,7 @@ h1 {
   color: #77878F;
   text-decoration: none;
 }
-
+.video-placeholder-text-youtube{
+  display: none;
+}
 
