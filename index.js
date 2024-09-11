@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     revisitCkyConsent(); // Handle click event
   });
 });
-*/
+
 document.addEventListener('DOMContentLoaded', function() {
   // Get the YouTube placeholder div by its class name
   var videoPlaceholder = document.querySelector('.video-placeholder-youtube');
@@ -238,6 +238,84 @@ document.addEventListener('DOMContentLoaded', function() {
     revisitCkyConsent(); // Handle click event
   });
 });
+*/
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the YouTube placeholder div by its class name
+  var videoPlaceholder = document.querySelector('.video-placeholder-youtube');
+  
+  // Ensure the video placeholder exists
+  if (!videoPlaceholder) {
+    console.error('Video placeholder not found.');
+    return;
+  }
+
+  // Hide the existing content inside the video placeholder
+  var existingContent = videoPlaceholder.children;
+  for (var i = 0; i < existingContent.length; i++) {
+    existingContent[i].style.display = 'none'; // Hides all children (like the paragraph and button) inside the placeholder
+  }
+
+  // Create the overlay div
+  var overlayDiv = document.createElement('div');
+  overlayDiv.className = 'overlay';
+  overlayDiv.style.position = 'absolute';
+  overlayDiv.style.top = '0';
+  overlayDiv.style.left = '0';
+  overlayDiv.style.width = '100%';
+  overlayDiv.style.height = '100%';
+  overlayDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Dark translucent overlay
+  overlayDiv.style.color = 'white';
+  overlayDiv.style.display = 'flex';
+  overlayDiv.style.alignItems = 'center';
+  overlayDiv.style.justifyContent = 'center';
+  overlayDiv.style.flexDirection = 'column';
+  overlayDiv.style.textAlign = 'center';
+
+  // Create and append the heading
+  var heading = document.createElement('h2');
+  heading.textContent = 'YouTube Privacy';
+  heading.style.fontSize = '28px';
+  heading.style.marginBottom = '15px';
+  overlayDiv.appendChild(heading);
+
+  // Create and append the paragraph with a link
+  var paragraph = document.createElement('p');
+  paragraph.style.fontSize = '16px';
+  paragraph.style.marginBottom = '20px';
+  paragraph.innerHTML = 'YouTube (owned by Google) requires cookies to be enabled. Please open <a href="#" id="cookie-link" style="color: #00aaff; text-decoration: underline;">Cookie Preferences</a> and enable Functional cookies to view the video.';
+  overlayDiv.appendChild(paragraph);
+
+  // Create and append the button
+  var button = document.createElement('button');
+  button.id = 'cookie-preferences-button';
+  button.textContent = 'Open Cookie Preferences';
+  button.style.backgroundColor = '#000'; // Black background
+  button.style.color = 'white';
+  button.style.border = 'none';
+  button.style.padding = '10px 20px';
+  button.style.fontSize = '16px';
+  button.style.cursor = 'pointer';
+  button.style.borderRadius = '5px';
+  button.style.marginTop = '10px';
+  overlayDiv.appendChild(button);
+
+  // Append the overlay to the video placeholder
+  videoPlaceholder.style.position = 'relative'; // Ensure the parent is positioned relatively
+  videoPlaceholder.appendChild(overlayDiv);
+
+  // Add event listeners to the button and link
+  document.getElementById('cookie-preferences-button').addEventListener('click', function() {
+    // Function to open cookie preferences
+    revisitCkyConsent(); // Assuming revisitCkyConsent() is defined for handling cookie preferences
+  });
+
+  document.getElementById('cookie-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    // You can also trigger cookie preferences from the link if needed
+    revisitCkyConsent(); // Handle click event
+  });
+});
+
 
 
 
