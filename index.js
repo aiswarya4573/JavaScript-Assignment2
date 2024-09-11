@@ -91,64 +91,74 @@ function clearOutputCookies() {
 */
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Function to create and add the button to a specific div
-  function addCookiePreferencesButton() {
-      // Get the target div by its class name (or use an ID if preferred)
-      var targetDiv = document.querySelector('.video-placeholder-youtube');
-      var texteDiv = document.querySelector('.video-placeholder-text-youtube');
-      console.log(texteDiv);
-
-      
-      // Ensure the target div exists
-      if (!targetDiv) {
-          console.error('Target div with class "video-placeholder-youtube" not found.');
-          return;
-      }
-      // Ensure the target div exists
-      if (!texteDiv) {
-        console.error('Target div with class "video-placeholder-text-youtube" not found.');
-        return;
-    }
-
-      // Create a new div element to hold the text
-      
-      texteDiv.style.display = 'none'; // Initially hidden
-
-      // Set the text content inside the newly created div
-      texteDiv.textContent = "Youtube (owned by Google) requires cookies to be enabled. Please open cookie preferences and enable functional cookies to view the video";
-
-      // Append the new texte div to the target div
-      targetDiv.appendChild(texteDiv);
-
-      // Create the button element
-      var openbutton = document.createElement('button');
-      openbutton.id = 'cookie-preferences-button'; // Optional: Can be used to reference the button later
-      openbutton.textContent = 'Open Cookie Preferences';
-      openbutton.style.backgroundColor = '#000'; // Black background
-      openbutton.style.color = 'white';
-      openbutton.style.border = 'none';
-      openbutton.style.padding = '10px 20px';
-      openbutton.style.fontSize = '16px';
-      openbutton.style.cursor = 'pointer';
-      openbutton.style.width = '600px';
-      openbutton.style.borderRadius = '5px';
-      openbutton.style.marginTop = '190px';
-      openbutton.style.marginRight = '200px';
-      openbutton.style.display = 'block'; // Ensure it is block-level to appear on its own line
-
-     
-              openbutton.addEventListener('click', (event) => {
-                  revisitCkyConsent();
-              });
-          
-   
-
-      // Append the button to the target div
-      targetDiv.appendChild(openbutton);
+  // Get the YouTube placeholder div by its class name
+  var videoPlaceholder = document.querySelector('.video-placeholder-youtube');
+  
+  // Ensure the video placeholder exists
+  if (!videoPlaceholder) {
+    console.error('Video placeholder not found.');
+    return;
   }
 
-  // Call the function to add the button and texte div
-  addCookiePreferencesButton();
+  // Create the overlay div
+  var overlayDiv = document.createElement('div');
+  overlayDiv.className = 'overlay';
+  overlayDiv.style.position = 'absolute';
+  overlayDiv.style.top = '0';
+  overlayDiv.style.left = '0';
+  overlayDiv.style.width = '100%';
+  overlayDiv.style.height = '100%';
+  overlayDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Dark translucent overlay
+  overlayDiv.style.color = 'white';
+  overlayDiv.style.display = 'flex';
+  overlayDiv.style.alignItems = 'center';
+  overlayDiv.style.justifyContent = 'center';
+  overlayDiv.style.flexDirection = 'column';
+  overlayDiv.style.textAlign = 'center';
+
+  // Create and append the heading
+  var heading = document.createElement('h2');
+  heading.textContent = 'YouTube Privacy';
+  heading.style.fontSize = '28px';
+  heading.style.marginBottom = '15px';
+  overlayDiv.appendChild(heading);
+
+  // Create and append the paragraph with a link
+  var paragraph = document.createElement('p');
+  paragraph.style.fontSize = '16px';
+  paragraph.style.marginBottom = '20px';
+  paragraph.innerHTML = 'YouTube (owned by Google) requires cookies to be enabled. Please open <a href="#" id="cookie-link" style="color: #00aaff; text-decoration: underline;">Cookie Preferences</a> and enable Functional cookies to view the video.';
+  overlayDiv.appendChild(paragraph);
+
+  // Create and append the button
+  var button = document.createElement('button');
+  button.id = 'cookie-preferences-button';
+  button.textContent = 'Open Cookie Preferences';
+  button.style.backgroundColor = '#000'; // Black background
+  button.style.color = 'white';
+  button.style.border = 'none';
+  button.style.padding = '10px 20px';
+  button.style.fontSize = '16px';
+  button.style.cursor = 'pointer';
+  button.style.borderRadius = '5px';
+  button.style.marginTop = '10px';
+  overlayDiv.appendChild(button);
+
+  // Append the overlay to the video placeholder
+  videoPlaceholder.style.position = 'relative'; // Make sure the parent is positioned relatively
+  videoPlaceholder.appendChild(overlayDiv);
+
+  // Add event listeners to the button and link
+  document.getElementById('cookie-preferences-button').addEventListener('click', function() {
+    // Function to open cookie preferences
+    revisitCkyConsent(); // Assuming revisitCkyConsent() is defined for handling cookie preferences
+  });
+
+  document.getElementById('cookie-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    // You can also trigger cookie preferences from the link if needed
+    revisitCkyConsent(); // Handle click event
+  });
 });
 
 
