@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Hide the existing content inside the video placeholder
   var existingContent = videoPlaceholder.querySelectorAll('p, button');
   existingContent.forEach(function(element) {
+    console.log(element.style.display);
     element.style.display = 'none'; // Hides the paragraph and button inside the placeholder
   });
 
