@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
   overlayDiv.style.left = '0';
   overlayDiv.style.width = '100%';
   overlayDiv.style.height = '100%';
-  overlayDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Dark translucent overlay
+  overlayDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'; // Dark translucent overlay
   overlayDiv.style.color = 'white';
   overlayDiv.style.display = 'flex';
   overlayDiv.style.alignItems = 'center';
